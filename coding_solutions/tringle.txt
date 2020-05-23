@@ -1,0 +1,21 @@
+
+
+
+Write a C Program to generate first N Triangular Numbers (Where N is Read from the Key board)
+  
+// Function to find triangular number 
+void triangular_series(int n) 
+{ 
+    for (int i = 0; i <= n; i++)  
+        printf(" %d ", i*(i+1)/2); 
+} 
+  
+// Driven Function 
+int main() 
+{ 
+    int n;
+    printf("enter the n");
+    scanf("%d",&n);
+    triangular_series(n); 
+    return 0; 
+} 
