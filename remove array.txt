@@ -1,4 +1,5 @@
 Write a Java Program To remove all the 10 in the given array
+
 package ten;
 import java.util.*;
 import java.util.Scanner;
@@ -19,17 +20,11 @@ System.out.println("Enter the length of array");
     {
     if(a[i]==10)
     {
-    for(j=i;j<n-i-1;j++)
+    for(j=i;j<n-1;j++)
     {
     a[j]=a[j+1];
     }
-    if(j!=n)
-       {
-    while(j<n)
-        {
-        a[j++]=0;
-        }
-       }
+    a[j]=0;
     }
     else
     {
