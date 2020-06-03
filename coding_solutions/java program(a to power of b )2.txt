@@ -1,0 +1,52 @@
+import java.io.*; 
+import java.math.*; 
+import java.util.Scanner;
+
+public class GFG  
+{ 
+    static int power(long x, long y, long p) 
+    { 
+        long res = 1; 
+       
+        x = x % p; 
+       
+        while (y > 0) { 
+            if ((y & 1) != 0) 
+                res = (res * x) % p; 
+            y = y >> 1; 
+            x = (x * x) % p; 
+        } 
+        return (int) res; 
+    } 
+
+    static void printLastKDigits(int a, int b, int k) 
+    { 
+        System.out.print("Last " + k + " digits of " + a + 
+                            "^"  +  b + " = "); 
+
+        int temp = 1; 
+        for (int i = 1; i <= k; i++) 
+            temp *= 10; 
+
+        temp = power(a, b, temp); 
+
+        for (int i = 0; i < k - Integer.toString(temp).length() ; i++) 
+            System.out.print(0); 
+
+        if (temp != 0) 
+            System.out.print(temp); 
+    } 
+      
+ 
+    public static void main(String[] args) 
+    { 
+        int a,b,k;
+        Scanner input=new Scanner(System.in);
+        System.out.println("Enter a inputs");
+        a=input.nextInt();
+        b=input.nextInt();
+        System.out.println("Enter a no of last digit to be displayed");
+       k=input.nextInt(); 
+        printLastKDigits(a, b, k); 
+    }
+}
